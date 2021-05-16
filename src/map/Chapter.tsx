@@ -18,13 +18,14 @@ const newGroup = (start: number, end: number, fill?: Fill): GroupObj => ({
   fill: fill || [randomInt(360), 100, 90],
 });
 
-export const Chapter = () => {
-  const [groups, setGroups] = useState<GroupObj[]>([
-    newGroup(17, 18),
-    newGroup(10, 15),
-    newGroup(21, 23),
-  ]);
-  console.log(groups);
+interface ChapterProps {
+  length: number;
+  groups?: GroupObj[];
+}
+export const Chapter = (props: ChapterProps) => {
+  const { length } = props;
+  const [groups, setGroups] = useState<GroupObj[]>(props.groups || []);
+
   const [drag, setDrag] = useState<[number, number, Fill] | null>(null);
   const dragStart = drag && (drag[0] <= drag[1] ? drag[0] : drag[1]);
   const dragEnd = drag && (drag[0] <= drag[1] ? drag[1] : drag[0]);
@@ -40,6 +41,7 @@ export const Chapter = () => {
   return (
     <>
       <Grid
+        length={length}
         onClick={(i) => addGroup(newGroup(i, i + 1))}
         onContextMenu={(i) => console.log(i, "right grid")}
         onMouseDown={(i) => setDrag([i, i, [randomInt(360), 100, 90]])}

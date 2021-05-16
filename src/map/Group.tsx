@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { blockOf, blockXY, GridDimention } from "../App";
 import { GroupObj } from "./Chapter";
 
