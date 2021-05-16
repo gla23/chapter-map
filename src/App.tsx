@@ -1,5 +1,5 @@
 import "./App.css";
-import { Chapter } from "./Chapter";
+import { Chapter } from "./map/Chapter";
 import { OldGrid } from "./OldGrid";
 
 function App() {

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { blockOf, blockXY, GridDimention } from "../App";
+import { GroupObj } from "./Chapter";
 
 const w = 50;
 const h = 50;
 
 interface GroupProps {
-  start: number;
-  end: number;
+  group: GroupObj;
   groupDimension?: GridDimention;
   onClick?: (i: number) => any;
   onContextMenu?: (blockNumber: number) => any;
@@ -14,16 +14,15 @@ interface GroupProps {
   onMouseUp?: (blockNumber: number) => any;
   onMouseEnter?: (blockNumber: number) => any;
   onMouseLeave?: (blockNumber: number) => any;
+  updateGroup?: (group: GroupObj) => any;
 }
 
 const clamp = (value: number, min: number, max: number) =>
   Math.max(min, Math.min(max, value));
-const randomInt = (max: number) => Math.floor(Math.random() * max);
 
 export const Group = (props: GroupProps) => {
   const {
-    start,
-    end,
+    group,
     groupDimension = { width: 2, height: 5 },
     onClick = () => {},
     onContextMenu = () => {},
@@ -31,15 +30,20 @@ export const Group = (props: GroupProps) => {
     onMouseUp = () => {},
     onMouseEnter = () => {},
     onMouseLeave = () => {},
+    updateGroup = () => {},
   } = props;
 
-  const [fill, setFill] = useState([randomInt(360), 100, 90]);
+  const { start, end, fill } = group;
+
   const editFill = (h: number, s: number, l: number) =>
-    setFill((fill) => [
-      clamp(fill[0] + h, 0, 360),
-      clamp(fill[1] + s, 0, 100),
-      clamp(fill[2] + l, 0, 100),
-    ]);
+    updateGroup({
+      ...group,
+      fill: [
+        clamp(fill[0] + h, 0, 360),
+        clamp(fill[1] + s, 0, 100),
+        clamp(fill[2] + l, 0, 100),
+      ],
+    });
   const { width, height } = groupDimension;
   const inGroup = (x: number, y: number) => {
     const block = blockOf(x, y, height, width);
