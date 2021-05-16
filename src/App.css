@@ -20,6 +20,27 @@ svg text {
 h2 {
   user-select: none;
 }
-svg .selected {
-  fill: white;
+svg .selected1 {
+  fill: #fff;
+}
+svg .selected2 {
+  fill: #eee;
+}
+svg .selected3 {
+  fill: #ddd;
+}
+svg .selected4 {
+  fill: #ccc;
+}
+svg .selected5 {
+  fill: #bbb;
+}
+svg .selected6 {
+  fill: #aaa;
+}
+svg .selected7 {
+  fill: #999;
+}
+svg .selected8 {
+  fill: #888;
 }

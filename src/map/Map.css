@@ -1,0 +1,10 @@
+g.grid-block > rect {
+  fill-opacity: 0;
+}
+g.group-block > rect {
+  fill: white;
+  fill-opacity: 1;
+}
+svg text {
+  pointer-events: none;
+}
