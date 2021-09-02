@@ -1,4 +1,4 @@
-import { blockOf, blockXY } from "../App";
+import { blockOf, blockXY } from "../blockMaths";
 import { GroupObj } from "./Chapter";
 
 const w = 50;

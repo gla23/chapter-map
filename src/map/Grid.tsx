@@ -1,5 +1,5 @@
 import React from "react";
-import { blockXY } from "../App";
+import { blockXY } from "../blockMaths";
 import "./Map.css";
 
 const w = 50;
