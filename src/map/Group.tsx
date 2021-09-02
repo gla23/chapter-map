@@ -1,12 +1,17 @@
-import { blockOf, blockXY, GridDimention } from "../App";
+import { blockOf, blockXY } from "../App";
 import { GroupObj } from "./Chapter";
 
 const w = 50;
 const h = 50;
 
+interface GridDimension {
+  width: number;
+  height: number;
+}
+
 interface GroupProps {
   group: GroupObj;
-  groupDimension?: GridDimention;
+  groupDimension?: GridDimension;
   onClick?: (i: number) => any;
   onContextMenu?: (blockNumber: number) => any;
   onMouseDown?: (blockNumber: number) => any;
