@@ -1,0 +1,41 @@
+:root {
+  --major00: #d4af37;
+  --major01: #78724c;
+  --major02: #ffffff;
+  --major03: #323d25;
+  --major04: #ffda46;
+  --major05: #d3171e;
+  --major06: #e4953e;
+  --major07: #677aa5;
+  --major08: #54aaa4;
+  --major09: #74404d;
+  --major10: #b82564;
+  --major11: #37db8a;
+  --major12: #490c18;
+  --major13: #ba271a;
+  --major14: #a2dce0;
+  --major15: #000;
+  --major16: #000;
+  --major17: #000;
+  --major18: #598d50;
+
+  --zeus: var(--major00);
+  --sid: var(--major01);
+  --son: var(--major02);
+  --sam: var(--major03);
+  --seer: var(--major04);
+  --salah: var(--major05);
+  --sage: var(--major06);
+  --sokka: var(--major07);
+  --sophie: var(--major08);
+  --spy: var(--major09);
+  --tuss: var(--major10);
+  --ted: var(--major11);
+  --tin: var(--major12);
+  --hmm: var(--major13);
+  --thor: var(--major14);
+  --hmm: var(--major15);
+  --hmm: var(--major16);
+  --hmm: var(--major17);
+  --toph: var(--major18);
+}

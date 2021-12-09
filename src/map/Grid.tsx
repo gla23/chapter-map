@@ -1,5 +1,5 @@
 import React from "react";
-import { blockXY } from "../blockMaths";
+import { boxXY } from "../box/boxMaths";
 import "./Map.css";
 
 const w = 50;
@@ -29,7 +29,7 @@ export const Grid: React.FunctionComponent<GridProps> = (props) => {
     <>
       {new Array(length + 1).fill(undefined).map((v, i) => {
         if (i === 0) return null;
-        const block = blockXY(i);
+        const block = boxXY(i);
         const x = w * block.x;
         const y = h * block.y;
         return (

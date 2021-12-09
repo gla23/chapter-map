@@ -1,4 +1,4 @@
-import { blockOf, blockXY } from "../blockMaths";
+import { boxOf, boxXY } from "../box/boxMaths";
 import { GroupObj } from "./Chapter";
 
 const w = 50;
@@ -12,13 +12,13 @@ interface GridDimension {
 interface GroupProps {
   group: GroupObj;
   groupDimension?: GridDimension;
-  onClick?: (i: number) => any;
-  onContextMenu?: (blockNumber: number) => any;
-  onMouseDown?: (blockNumber: number) => any;
-  onMouseUp?: (blockNumber: number) => any;
-  onMouseEnter?: (blockNumber: number) => any;
-  onMouseLeave?: (blockNumber: number) => any;
-  updateGroup?: (group: GroupObj) => any;
+  onClick?: (i: number) => void;
+  onContextMenu?: (blockNumber: number) => void;
+  onMouseDown?: (blockNumber: number) => void;
+  onMouseUp?: (blockNumber: number) => void;
+  onMouseEnter?: (blockNumber: number) => void;
+  onMouseLeave?: (blockNumber: number) => void;
+  updateGroup?: (group: GroupObj) => void;
 }
 
 const clamp = (value: number, min: number, max: number) =>
@@ -50,13 +50,13 @@ export const Group = (props: GroupProps) => {
     });
   const { width, height } = groupDimension;
   const inGroup = (x: number, y: number) => {
-    const block = blockOf(x, y, height, width);
+    const block = boxOf(x, y, height, width);
     return block >= start && block <= end;
   };
 
   const blocks = [];
   for (let i = start; i <= end; i++) {
-    const block = blockXY(i, height, width);
+    const block = boxXY(i, height, width);
     const x = w * block.x;
     const y = h * block.y;
     blocks.push(
