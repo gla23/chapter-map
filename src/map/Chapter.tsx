@@ -25,7 +25,7 @@ interface ChapterProps {
 export const Chapter = (props: ChapterProps) => {
   const { length } = props;
   const [groups, setGroups] = useState<GroupObj[]>(props.groups || []);
-
+  console.log(groups);
   const [drag, setDrag] = useState<[number, number, Fill] | null>(null);
   const dragStart = drag && (drag[0] <= drag[1] ? drag[0] : drag[1]);
   const dragEnd = drag && (drag[0] <= drag[1] ? drag[1] : drag[0]);

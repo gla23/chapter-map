@@ -12,9 +12,9 @@ function App() {
             <OldGrid />
           </g>
           <g transform={`translate(50, 50)`}>
-            <Chapter length={27} groups={james[0] as any} />
+            <Chapter length={48} groups={james[0] as any} />
           </g>
-          <g transform={`translate(400, 50)`}>
+          {/* <g transform={`translate(400, 50)`}>
             <Chapter length={26} groups={james[1] as any} />
           </g>
           <g transform={`translate(50, 350)`}>
@@ -25,7 +25,7 @@ function App() {
           </g>
           <g transform={`translate(500, 350)`}>
             <Chapter length={20} groups={james[4] as any} />
-          </g>
+          </g> */}
         </svg>
       </div>
       <h2 style={{ marginTop: 0 }}>Chapter map</h2>
